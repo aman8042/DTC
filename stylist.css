@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #2C3E50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+#current-time {
+    font-size: 1.2em;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#map-section {
+    flex: 1;
+    position: relative;
+    
+}
+
+#map {
+    width: 50%;
+    height: 50%;
+    background-color: #ECF0F1; /* Placeholder for map */
+}
+
+#info-section {
+    padding: 20px;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-between;
+}
+
+#next-stoppage, #duty-hours {
+    flex: 1;
+    margin: 0 10px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.progress-container {
+    margin: 10px 0;
+}
+
+.progress {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #3498DB;
+}
+
+footer {
+    background-color: #34495E;
+    padding: 10px;
+    text-align: right;
+}
+
+button {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2980B9;
+}
+
+#map
+{
+    border-radius: 16px;
+}

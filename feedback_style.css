@@ -1,0 +1,124 @@
+/* Main Content Section */
+#main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: 100vh;
+    background: linear-gradient(to right, #E7E9BB, #403B4A); /* Gradient background */
+}
+
+/* Feedback Section */
+.feedback-section {
+    background: linear-gradient(135deg, #797d81, #cfd9df);
+    padding: 40px;
+    border-radius: 50px; /* Smooth rounded corners */
+    box-shadow: 0 4px 8px rgba(2, 14, 14, 1.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Feedback Section Heading */
+.feedback-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4f4646;
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Feedback Box */
+.feedback-box {
+    background: #f1f1f1;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(1, 0.5, 0.1, 0.1);
+    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    width: 350px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 2.2);
+    background: #fff;
+    color: #333;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Submit Button */
+.submit-button {
+    padding: 15px 30px;
+    background: #808588;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background: #a6bccc;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.submit-button:hover::before {
+    transform: scaleX(1);
+}

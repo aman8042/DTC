@@ -1,0 +1,813 @@
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    padding:20px 100px;
+    background: rgba(12, 11, 11, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, .2);
+    transition: top 0.3s ease;  /* Smooth transition effect */
+}
+.navbar::before{
+    content: '';
+    position: relative;
+    top:0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(69, 60, 60, 0.4),transparent);
+    transition: .5s;
+}
+.navbar:hover::before{
+    left: 100%;
+}
+.logo {
+    display: block;  /* Ensure the logo is treated as a block-level element */
+    position: fixed;  /* Fix the logo at the top */
+    top: -30px;  /* Adjust the space from the top of the page */
+    left: 20px; /* Adjust the space from the left of the page */
+    z-index: 1000; /* Ensure the logo stays on top of other elements */
+}
+
+.logo img {
+    margin-top: 20px;
+    height: 100px; /* Set the height of the logo */
+    width: auto;  /* Maintain the aspect ratio */
+    max-width: 150px; /* Optional: Limit the maximum width */
+    object-fit: contain; /* Ensure the image scales nicely within the bounds */
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.navbar .nav-links li a {
+    color: rgb(7, 7, 7);
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.navbar .nav-links li a:hover {
+    color: #8187ae;
+}
+
+/* Header Section */
+.header {
+    background-color: #007acc;
+    color: white;
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    background: url('background-texture.jpg') fixed no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header-text {
+    max-width: 50%;
+}
+
+.header-text h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.header-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.header-text .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.header-text .cta-button:hover {
+    background-color: #e6b800;
+}
+
+.header-animation video {
+    position: absolute;
+    width: -3200%;
+    width: 100%;
+    border-radius: 10px;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: opacity(30%);
+    filter: brightness(1);
+    background-attachment: fixed;
+
+}
+
+/* Features Section */
+.features {
+    padding: 60px 20px;
+    size: relative;
+    /* background-image: url("bus.webp"); */
+    /* width: 980px; */
+    text-align: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.features h2 {
+    color: #4d5050;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500px;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.feature {
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    color: #4a3a3d;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.feature p {
+    color: #515a5b;
+    font-size: 1.1rem;
+}
+/*..........*/
+/* General Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Darkened background */
+    z-index: 1001;
+    backdrop-filter: blur(10px);
+}
+
+/* Show the modal */
+.modal.active {
+    display: block;
+}
+
+/* Container Styling */
+.login-container,
+.signup-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px; /* Increased padding for larger form */
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: morph 1.5s ease-in-out infinite alternate;
+    width: 400px; /* Increase the width of the form */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 20px;
+    }
+    100% {
+        border-radius: 50px;
+    }
+}
+
+/* Title Styling */
+.login-container h2,
+.signup-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Button Styling */
+.login-button,
+.signup-button,
+.close-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgba(0, 90, 155, 0.8);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover,
+.signup-button:hover,
+.close-button:hover {
+    background-color: #ffcc00;
+}
+
+/* Form Styling */
+.modal form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal label {
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.modal input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.modal input::placeholder {
+    color: #ddd;
+}
+
+/* Sign-Up Prompt */
+.signup-prompt {
+    margin-top: 15px;
+}
+
+.signup-prompt p {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.signup-prompt a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.signup-prompt a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/**/
+/* About Us Section */
+#about-us {
+    padding: 60px 20px;
+    background-image: linear-gradient(
+  45deg,
+  hsl(240deg 4% 95%) 0%,
+  hsl(240deg 1% 86%) 10%,
+  hsl(240deg 0% 77%) 20%,
+  hsl(240deg 0% 68%) 30%,
+  hsl(240deg 0% 59%) 40%,
+  hsl(0deg 0% 50%) 50%,
+  hsl(344deg 0% 40%) 60%,
+  hsl(344deg 0% 30%) 70%,
+  hsl(344deg 0% 20%) 80%,
+  hsl(344deg 0% 11%) 90%,
+  hsl(0deg 0% 0%) 100%
+);
+    text-align: center;
+    background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#about-us h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #efe3e3;
+}
+.about-description {
+    max-width: 1200px; /* Limits the width of the paragraph */
+    margin: 0 auto; /* Centers the paragraph */
+    font-size: 1.2rem;
+    line-height: 1.3;
+    color: #555;
+    background-color: #ffffff; /* Optional: Background color of the paragraph */
+    padding: 15px 20px; /* Adds padding inside the paragraph */
+    border-radius: 20px; /* Adds curved corners */
+    box-shadow: 10px 4px 10px rgba(5, 4, 4.2, 6.1); /* Adds a subtle shadow */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    margin-top: -2%;
+    margin-bottom: 3%;
+}
+
+.team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.team-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+    
+}
+
+.team-member {
+    width: 20%; /* Adjust the width as needed */
+    height: auto;
+    padding: 10px;
+    background-color: rgb(113, 111, 111);
+    border-radius:  30px 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 2.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member img {
+    width: 180px; /* Adjust the size as needed */
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 4px solid #7d7777; /* Optional: border around the image */
+}
+
+.team-member h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #e9edef;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #272424;
+    margin: 0;
+}
+/*............*/
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+}
+
+/* Footer Container */
+.footer-container {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-container p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-details {
+    margin-bottom: 30px;
+}
+
+.contact-details p {
+    display: flex;
+    align-items: center;/* Reset and General Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+        line-height: 1.6;
+    }
+    
+    /* Navigation Bar */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 100px;
+        background: rgba(12, 11, 11, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        transition: top 0.3s ease; /* Smooth transition effect */
+    }
+    
+    .navbar::before {
+        content: '';
+        position: absolute; /* Changed to absolute for proper positioning */
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(69, 60, 60, 0.4), transparent);
+        transition: 0.5s;
+    }
+    
+    .navbar:hover::before {
+        left: 100%;
+    }
+    
+    .logo {
+        position: fixed;
+        top: 20px; /* Adjusted top position */
+        left: 20px;
+        z-index: 1000;
+    }
+    
+    .logo img {
+        height: 150px;
+        width: auto;
+        max-width: 150px;
+        object-fit: contain;
+    }
+    
+    .navbar .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 50px;
+    }
+    
+    .navbar .nav-links li a {
+        color: rgb(7, 7, 7);
+        text-decoration: none;
+        font-size: 19px;
+    }
+    
+    .navbar .nav-links li a:hover {
+        color: #8187ae;
+    }
+    
+    /* Header Section */
+    .header {
+        background-color: #007acc;
+        color: white;
+        padding: 100px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 100vh;
+        background: url('background-texture.jpg') fixed no-repeat center center/cover;
+    }
+    
+    .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+    }
+    
+    .header-text {
+        max-width: 50%;
+    }
+    
+    .header-text h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    
+    .header-text p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    
+    .header-text .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ffcc00;
+        color: #333;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+    
+    .header-text .cta-button:hover {
+        background-color: #e6b800;
+    }
+    
+    .header-animation video {
+        position: absolute;
+        width: 100%;
+        height: auto; /* Ensure the video scales nicely */
+        border-radius: 10px;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        filter: opacity(30%);
+        background-attachment: fixed;
+    }
+    
+    /* Features Section */
+    .features {
+        padding: 60px 20px;
+        text-align: center;
+    }
+    
+    .features h2 {
+        color: #4d5050;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 500;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .feature {
+        margin-bottom: 20px;
+    }
+    
+    .feature h3 {
+        color: #4a3a3d;
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+    }
+    
+    .feature p {
+        color: #515a5b;
+        font-size: 1.1rem;
+    }
+    
+    /* General Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Darkened background */
+        z-index: 1001;
+        backdrop-filter: blur(10px);
+    }
+    
+    /* Show the modal */
+    .modal.active {
+        display: block;
+    }
+    
+    /* Container Styling */
+    .login-container {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        animation: morph 1.5s ease-in-out infinite alternate;
+        width: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    @keyframes morph {
+        0% {
+            border-radius: 20px;
+        }
+        100% {
+            border-radius: 50px;
+        }
+    }
+    
+    /* Title Styling */
+    .login-container h2 {
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        color: #fff;
+    }
+    
+    /* Button Styling */
+    .login-button,
+    .close-button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: rgba(0, 90, 155, 0.8);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+    
+    .login-button:hover,
+    .close-button:hover {
+        background-color: #ffcc00;
+    }
+    
+    /* Form Styling */
+    .modal form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .modal label {
+        margin-bottom: 5px;
+        color: #fff;
+    }
+    
+    .modal input {
+        margin-bottom: 10px;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #fff;
+    }
+    
+    .modal input::placeholder {
+        color: #ddd;
+    }
+    
+    /* Sign-Up Prompt */
+    .signup-prompt {
+        margin-top: 15px;
+    }
+    
+    .signup-prompt p {
+        font-size: 14px;
+        color: #ddd;
+    }
+    
+    .signup-prompt a {
+        color: #ffcc00;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+    
+    .signup-prompt a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+    
+    /* Hidden Class */
+    .hidden {
+        display: none;
+    }
+    
+    /* About Us Section */
+    #about-us {
+        padding: 60px 20px;
+        /* background-image: linear-gradient(
+            45deg,
+            hsl(240deg 4% 95%) 0%,
+            hsl(240deg 1% 86%) 10%,
+            hsl(240deg 0% 77%) 20%,
+            hsl(240deg 0% 68%) 30%,
+            hsl(240deg 0% 59%) 40%,
+            hsl(0deg 0% 50%) 50%,
+            hsl(344deg 0% 40%) 60%,
+            hsl(344deg 0% 30%) 70%,
+            hsl(344deg 0% 20%) 80%,
+            hsl(344deg 0% 11%) 90%,
+            hsl(0deg 0% 0%) 100%
+        ); */
+        text-align: center;
+        background-attachment: fixed;
+    }
+    
+    #about-us h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        color: #efe3e3;
+    }
+    
+    .about-description {
+        max-width: 1200px;
+        margin: 0 auto;
+        font-size: 1.2rem;
+        line-height: 1.3;
+        color: #555;
+        background-color: #ffffff;
+        padding: 15px 20px;
+        border-radius: 20px;
+        box-shadow: 10px 4px 10px rgba(5, 4, 4.2, 6.1);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-style: italic;
+        margin-top: -2%;
+        margin-bottom: 3%;
+    }
+    
+    .team-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .team-row {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .team-member {
+        width: 20%;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, .2)
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact-details i {
+    margin-right: 10px;
+    color: #ff6f61;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+    }
+}
+/* Specific style for the last paragraph in the footer */
+.footer-container p.footer {
+    font-size: 14px;
+    color: #bbb;
+    margin-top: 20px;
+}

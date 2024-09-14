@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Dashboard</title>
+    <link rel="stylesheet" href="stylist.css">
+    <script defer src="scripture.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Driver Dashboard</h1>
+        <div id="current-time"></div>
+    </header>
+    <main>
+        <section id="map-section">
+            <div id="map"></div>
+        </section>
+        <section id="info-section">
+            <div id="next-stoppage">
+                <h2>Next Stoppage</h2>
+                <p id="stoppage-name">Stoppage Name</p>
+                <p id="eta">ETA: 00:00</p>
+            </div>
+            <div id="duty-hours">
+                <h2>Duty Hours</h2>
+                <div class="progress-container">
+                    <label>Hours Completed:</label>
+                    <div class="progress">
+                        <div class="progress-bar" id="hours-completed" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <label>Hours Left:</label>
+                    <div class="progress">
+                        <div class="progress-bar" id="hours-left" style="width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <button id="logout">Log Out</button>
+        <button id="help">Help</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    .sec1{
+        width:100%;
+           
+            display:grid;
+            place-items: center;
+            text-align: center;
+        background: linear-gradient(#b31b1b1a);
+        background-image: url("pexels-elletakesphotos-1680172.jpg");
+         height: 100vh;
+        background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    }
+    .sec2{
+        width:100%;
+            height: 100vh;
+            display:grid;
+            place-items: center;
+            background-color: black;
+            text-align: center;
+        background: linear-gradient(#25fa121a);
+        background-image: url("Delhi Metro Map.jpg");
+
+        background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    }
+    .sec3{
+        width:100%;
+            height: 100vh;
+            display:grid;
+            place-items: center;
+            text-align: center;
+            background-color: gray;
+        background: linear-gradient(#e1e5de1a);
+        background-image: url("pexels-elletakesphotos-1680172.jpg");
+
+        background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    }
+   </style>
+<body>
+    <section class="sec1">
+        <h1>sction</h1>
+    </section>
+    <section class="sec2">
+        <h1>section dljfld dnld</h1>
+    </section>
+    <section class="sec3">
+        <h1>seledjlf ljf</h1>
+    </section>
+</body>
+</html>
+<!-- document.addEventListener('DOMContentLoaded', () => {
+    const feedbackForm = document.getElementById('feedback-form');
+    const feedbackSection = document.getElementById('feedback-section');
+    const mainContent = document.getElementById('main-content');
+
+    // Handle feedback form submission
+    feedbackForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Simulate form submission
+        feedbackForm.reset();
+
+        // Optionally, refresh the page or redirect
+        // window.location.reload(); // Uncomment to refresh the page
+    });
+
+    // Detect clicks outside the feedback section to refresh the page
+    window.addEventListener('click', (event) => {
+        if (!feedbackSection.contains(event.target) && !event.target.closest('nav')) {
+            window.location.reload(); // Refresh the page
+        }
+    });
+
+    // Handle modal functionality
+    document.getElementById('login-link').addEventListener('click', () => {
+        document.getElementById('login-selection').classList.add('active');
+    });
+
+    window.addEventListener('click', (event) => {
+        const activeModal = document.querySelector('.modal.active');
+        if (activeModal && !event.target.closest('.login-container') && !event.target.closest('#login-link')) {
+            activeModal.classList.remove('active');
+        }
+    });
+
+    function selectLevel(level) {
+        document.getElementById('login-selection').classList.remove('active');
+        if (level === 'driver') {
+            document.getElementById('driver-login').classList.add('active');
+        } else if (level === 'authority') {
+            document.getElementById('authority-login').classList.add('active');
+        }
+    }
+
+    function closeModal() {
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.classList.remove('active');
+        });
+    }
+});
+ -->
+<!-- document.getElementById('login-link').addEventListener('click', function() {
+    document.getElementById('login-selection').classList.add('active');
+});
+
+// Close modal when clicking outside the form
+window.addEventListener('click', function(event) {
+    const activeModal = document.querySelector('.modal.active');
+    if (activeModal && !event.target.closest('.login-container') && !event.target.closest('#login-link')) {
+        activeModal.classList.remove('active');
+    }
+});
+
+function selectLevel(level) {
+    document.getElementById('login-selection').classList.remove('active');
+    if (level === 'driver') {
+        document.getElementById('driver-login').classList.add('active');
+    } else if (level === 'authority') {
+        document.getElementById('authority-login').classList.add('active');
+    }
+}
+
+function closeModal() {
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.classList.remove('active');
+    });
+} -->
